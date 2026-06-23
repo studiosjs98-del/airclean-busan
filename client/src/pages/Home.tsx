@@ -4,7 +4,7 @@ import { BeforeAfter } from "@/components/sections/BeforeAfter";
 import { TrustBand } from "@/components/sections/TrustBand";
 import { Process } from "@/components/sections/Process";
 import { Services } from "@/components/sections/Services";
-import { Reviews } from "@/components/sections/Reviews";
+import { ReviewsMarquee } from "@/components/sections/ReviewsMarquee";
 import { Estimate } from "@/components/sections/Estimate";
 import { Faq } from "@/components/sections/Faq";
 import { SiteFooter } from "@/components/sections/SiteFooter";
@@ -28,7 +28,7 @@ export default function Home() {
         <TrustBand />
         <Process />
         <Services />
-        <Reviews />
+        <ReviewsMarquee />
         <Estimate />
         <Faq />
       </main>

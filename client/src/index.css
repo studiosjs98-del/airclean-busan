@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@custom-variant dark (&:is(.dark *));
+
 /* =============================================================================
    강철에어클린 — Design System Tokens
    Pattern: Trust & Authority + Conversion
@@ -57,6 +59,25 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  /* 21st.dev marquee (lukacho) — duplicated track scrolls -50% */
+  --animate-marquee: marquee var(--duration, 30s) linear infinite;
+  --animate-marquee-reverse: marquee var(--duration, 30s) linear infinite reverse;
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* 21st.dev aurora background (aceternity) */
+  --animate-aurora: aurora 60s linear infinite;
+  @keyframes aurora {
+    from {
+      background-position: 50% 50%, 50% 50%;
+    }
+    to {
+      background-position: 350% 50%, 350% 50%;
+    }
+  }
 }
 
 :root {
@@ -251,8 +272,11 @@
       opacity: 1 !important;
       transform: none !important;
     }
-    .clean-air-drift {
+    .clean-air-drift,
+    [class*="animate-marquee"],
+    [class*="animate-aurora"] {
       animation: none !important;
+      transform: none !important;
     }
   }
 }

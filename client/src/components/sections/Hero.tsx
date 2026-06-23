@@ -1,5 +1,6 @@
 import { site } from "@/lib/site";
 import { PhoneButton, KakaoButton } from "@/components/Brand";
+import { AuroraBackground } from "@/components/ui/aurora-background";
 import { MapPin, ShieldCheck, Sparkles, BadgeCheck, Clock } from "lucide-react";
 
 const CHIPS = [
@@ -11,10 +12,10 @@ const CHIPS = [
 
 export function Hero() {
   return (
-    <section
-      id="top"
-      className="clean-air clean-air-drift relative overflow-hidden"
-    >
+    <section id="top" className="clean-air relative overflow-hidden">
+      {/* 21st.dev aurora — animated clean-air background layer */}
+      <AuroraBackground className="absolute inset-0" />
+
       {/* decorative steel grid sheen, non-interactive */}
       <div
         aria-hidden="true"
