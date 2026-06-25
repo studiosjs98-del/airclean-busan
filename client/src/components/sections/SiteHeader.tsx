@@ -4,8 +4,9 @@ import { site } from "@/lib/site";
 import { Logo, PhoneButton } from "@/components/Brand";
 
 const NAV = [
+  { href: "#about", label: "회사 소개" },
   { href: "#process", label: "청소 과정" },
-  { href: "#proof", label: "시공 사례" },
+  { href: "#gallery", label: "시공 갤러리" },
   { href: "#reviews", label: "고객 후기" },
   { href: "#faq", label: "자주 묻는 질문" },
 ];

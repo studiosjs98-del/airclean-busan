@@ -2,7 +2,9 @@ import { SiteHeader } from "@/components/sections/SiteHeader";
 import { Hero } from "@/components/sections/Hero";
 import { BeforeAfter } from "@/components/sections/BeforeAfter";
 import { TrustBand } from "@/components/sections/TrustBand";
+import { Owner } from "@/components/sections/Owner";
 import { Process } from "@/components/sections/Process";
+import { Gallery } from "@/components/sections/Gallery";
 import { Services } from "@/components/sections/Services";
 import { ReviewsMarquee } from "@/components/sections/ReviewsMarquee";
 import { Estimate } from "@/components/sections/Estimate";
@@ -26,7 +28,9 @@ export default function Home() {
         <Hero />
         <BeforeAfter />
         <TrustBand />
+        <Owner />
         <Process />
+        <Gallery />
         <Services />
         <ReviewsMarquee />
         <Estimate />

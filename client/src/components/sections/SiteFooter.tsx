@@ -16,7 +16,7 @@ export function SiteFooter() {
             </p>
           </div>
           <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-            <PhoneButton size="lg" className="w-full bg-white text-primary hover:bg-white/90 sm:w-auto" />
+            <PhoneButton size="lg" className="w-full sm:w-auto" />
             <KakaoButton size="lg" className="w-full sm:w-auto" />
           </div>
         </div>

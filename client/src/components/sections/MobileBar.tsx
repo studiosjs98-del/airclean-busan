@@ -16,7 +16,7 @@ export function MobileBar() {
         <a
           href={site.phoneHref}
           aria-label={`전화 상담 ${site.phoneDisplay}`}
-          className="inline-flex min-h-[50px] items-center justify-center gap-2 rounded-xl bg-primary font-semibold text-white shadow-sm transition-transform active:scale-[0.98]"
+          className="inline-flex min-h-[50px] items-center justify-center gap-2 rounded-xl bg-accent font-semibold text-accent-foreground shadow-[0_4px_18px_-4px_rgba(45,212,191,0.6)] transition-transform active:scale-[0.98]"
         >
           <Phone className="h-5 w-5" strokeWidth={2.4} />
           전화 상담
