@@ -13,7 +13,10 @@ export const site = {
   // 영업 정보
   hours: "연중무휴 · 08:00 ~ 20:00",
   businessNumber: "000-00-00000", // 사업자등록번호 교체
-  serviceAreaLabel: "부산 전 지역 · 김해 · 양산 · 창원",
+  serviceAreaLabel: "전주·익산·군산 등 전북 전 지역",
+  // 구글맵 임베드 URL(서비스 지역). .env 의 VITE_MAPS_EMBED_URL 로 덮어쓸 수 있음.
+  mapsEmbedFallback:
+    "https://www.google.com/maps?q=%EC%A0%84%EB%9D%BC%EB%B6%81%EB%8F%84%20%EC%A0%84%EC%A3%BC%EC%8B%9C&z=10&output=embed",
 } as const;
 
 export type Stat = {
@@ -27,11 +30,12 @@ export type Stat = {
   label: string;
 };
 
+// 실제 신뢰 지표 — 운영 전 실제 수치로 교체하세요. (※ 현재는 예시값)
 export const stats: Stat[] = [
-  { value: 99.9, suffix: "%", decimals: 1, label: "유해세균 · 곰팡이 살균력" },
-  { value: 12000, suffix: "대+", label: "누적 완전분해 청소 시공" },
-  { value: 15, suffix: "년", label: "현장 경력의 전문 기술진" },
-  { value: 98, suffix: "%", label: "고객 재방문 · 추천율" },
+  { value: 4200, suffix: "건+", label: "누적 완전분해 시공" },
+  { value: 98, suffix: "%", label: "고객 만족도" },
+  { value: 100, suffix: "%", label: "친환경 폐수 처리" },
+  { value: 12, suffix: "개월", label: "A/S 보증 기간" },
 ];
 
 export type Step = {
@@ -88,42 +92,42 @@ export const reviews: Review[] = [
   {
     initial: "김",
     name: "김O진",
-    region: "부산 해운대구",
+    region: "전주시 완산구",
     type: "스탠드형",
     text: "분해해서 보여주시는데 곰팡이가 정말 많았어요. 청소 후엔 냄새가 싹 사라지고 바람도 훨씬 시원해졌습니다. 사진까지 보내주셔서 믿음이 갔어요.",
   },
   {
     initial: "이",
     name: "이O수",
-    region: "부산 동래구",
+    region: "전주시 덕진구",
     type: "벽걸이형",
     text: "아이가 비염이 있어서 걱정했는데, 살균소독까지 꼼꼼히 해주셔서 안심됩니다. 시간 약속도 정확하시고 마무리 정리도 깔끔하셨어요.",
   },
   {
     initial: "박",
     name: "박O경",
-    region: "김해시 장유",
+    region: "익산시 영등동",
     type: "천장형 시스템",
     text: "상가 천장형 4대를 맡겼는데 영업에 지장 없게 빠르고 깔끔하게 해주셨습니다. 냉방이 확실히 잘 되니 전기요금도 줄어든 느낌이에요.",
   },
   {
     initial: "정",
     name: "정O희",
-    region: "양산시 물금",
+    region: "군산시 수송동",
     type: "스탠드형",
     text: "여기저기 견적 받아봤는데 가장 자세히 설명해주셨어요. 가격도 투명하고 추가 비용 없이 처음 안내받은 그대로였습니다. 강력 추천합니다.",
   },
   {
     initial: "최",
     name: "최O민",
-    region: "창원시 성산구",
+    region: "정읍시 연지동",
     type: "벽걸이형 2대",
     text: "오래된 에어컨이라 반신반의했는데 새것처럼 깨끗해졌어요. 작업 내내 바닥에 비닐 깔고 하셔서 집이 하나도 안 더러워졌습니다.",
   },
   {
     initial: "한",
     name: "한O라",
-    region: "부산 남구",
+    region: "완주군 봉동읍",
     type: "스탠드형",
     text: "냄새 때문에 에어컨을 못 틀었는데 이제 마음 놓고 씁니다. 친절하게 관리법까지 알려주셔서 좋았어요. 내년에도 꼭 다시 부를게요.",
   },

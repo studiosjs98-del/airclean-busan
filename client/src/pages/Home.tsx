@@ -9,6 +9,7 @@ import { Services } from "@/components/sections/Services";
 import { ReviewsMarquee } from "@/components/sections/ReviewsMarquee";
 import { Estimate } from "@/components/sections/Estimate";
 import { Faq } from "@/components/sections/Faq";
+import { Location } from "@/components/sections/Location";
 import { SiteFooter } from "@/components/sections/SiteFooter";
 import { MobileBar } from "@/components/sections/MobileBar";
 
@@ -35,6 +36,7 @@ export default function Home() {
         <ReviewsMarquee />
         <Estimate />
         <Faq />
+        <Location />
       </main>
 
       <SiteFooter />

@@ -8,7 +8,7 @@ const NAV = [
   { href: "#process", label: "청소 과정" },
   { href: "#gallery", label: "시공 갤러리" },
   { href: "#reviews", label: "고객 후기" },
-  { href: "#faq", label: "자주 묻는 질문" },
+  { href: "#location", label: "오시는 길" },
 ];
 
 export function SiteHeader() {

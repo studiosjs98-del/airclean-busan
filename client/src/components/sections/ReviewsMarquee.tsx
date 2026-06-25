@@ -57,7 +57,7 @@ export function ReviewsMarquee() {
             고객님이 직접 남긴 후기
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            부산·경남 지역 고객님들의 솔직한 후기입니다. 다시 찾아주시는 이유가
+            전북 지역 고객님들의 솔직한 후기입니다. 다시 찾아주시는 이유가
             있습니다.
           </p>
         </Reveal>

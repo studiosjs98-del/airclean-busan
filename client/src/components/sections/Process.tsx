@@ -11,11 +11,11 @@ export function Process() {
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow justify-center">완전분해 청소 과정</p>
           <h2 className="mt-3 text-[1.75rem] font-extrabold leading-tight tracking-[-0.02em] text-ink sm:text-4xl">
-            눈에 보이는 곳만? 저희는 분해부터 다릅니다
+            겉만 닦으면, 곰팡이는 그대로입니다
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            겉만 닦는 간이청소와는 다릅니다. 4단계 완전분해 공정으로 내부 깊은 곳의
-            오염까지 빈틈없이 제거합니다.
+            분해부터 살균까지 4단계로, 에어컨 속 깊은 곳의 곰팡이와 냄새까지
+            확실하게 없애드립니다.
           </p>
         </Reveal>
 

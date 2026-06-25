@@ -15,8 +15,8 @@ export function Services() {
             정직하고 투명한 가격
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            모든 서비스에 완전분해 청소와 99.9% 살균소독이 기본 포함됩니다. 추가
-            비용 없이 견적 그대로 시공합니다.
+            완전분해 청소와 살균까지 모두 기본 포함. 추가 비용 없이 처음 안내한
+            금액 그대로 시공합니다.
           </p>
         </Reveal>
 
@@ -26,7 +26,7 @@ export function Services() {
             return (
               <Reveal as="article" key={svc.title} delay={i * 90}>
                 <div className="group flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg">
-                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-accent-2 transition-colors group-hover:bg-accent group-hover:text-white">
+                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-accent-ink transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
                     <Icon className="h-6 w-6" strokeWidth={2.1} />
                   </div>
                   <h3 className="mt-4 text-lg font-bold text-ink">{svc.title}</h3>

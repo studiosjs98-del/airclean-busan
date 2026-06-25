@@ -1,13 +1,14 @@
 import { site } from "@/lib/site";
 import { PhoneButton, KakaoButton } from "@/components/Brand";
 import { AuroraBackground } from "@/components/ui/aurora-background";
-import { MapPin, ShieldCheck, Sparkles, BadgeCheck, Clock, Star } from "lucide-react";
+import { MapPin, Check, Star } from "lucide-react";
 
+// Real, verifiable trust signals only — no logos.
 const CHIPS = [
-  { icon: ShieldCheck, label: "99.9% 살균소독" },
-  { icon: Sparkles, label: "완전분해 청소" },
-  { icon: BadgeCheck, label: "100% 환불보장" },
-  { icon: Clock, label: "당일 예약 가능" },
+  "사업자등록 완료",
+  "친환경 폐수 100% 처리",
+  "100% 환불보장",
+  "당일 예약 가능",
 ];
 
 export function Hero() {
@@ -19,10 +20,10 @@ export function Hero() {
       {/* decorative steel grid sheen, non-interactive */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.06]"
+        className="pointer-events-none absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage:
-            "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
+            "linear-gradient(#0f1b1e 1px, transparent 1px), linear-gradient(90deg, #0f1b1e 1px, transparent 1px)",
           backgroundSize: "44px 44px",
           maskImage: "radial-gradient(75% 60% at 50% 25%, black, transparent 78%)",
         }}
@@ -43,10 +44,10 @@ export function Hero() {
             className="rise mx-auto mt-5 max-w-[18ch] text-[2rem] font-extrabold leading-[1.12] tracking-[-0.02em] text-ink sm:text-5xl md:text-[3.5rem] lg:mx-0"
             style={{ ["--rise-delay" as string]: "90ms" }}
           >
-            에어컨 속까지,
+            곰팡이 냄새 없는
             <br />
-            <span className="bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-transparent">
-              강철처럼 깨끗하게.
+            <span className="bg-gradient-to-r from-accent-ink to-accent-2 bg-clip-text text-transparent">
+              깨끗하고 건강한 공기.
             </span>
           </h1>
 
@@ -54,8 +55,8 @@ export function Hero() {
             className="rise mx-auto mt-5 max-w-[42ch] text-base leading-[1.7] text-muted-foreground sm:text-lg lg:mx-0"
             style={{ ["--rise-delay" as string]: "180ms" }}
           >
-            완전분해 청소와 99.9% 살균소독으로, 보이지 않던 곰팡이와 묵은 냄새까지
-            완벽하게 제거합니다. 믿을 수 있는 형제가 직접 시공합니다.
+            에어컨 속 곰팡이와 묵은 냄새를 말끔히. 더 시원한 바람으로 전기료까지
+            아껴드립니다. 믿을 수 있는 형제가 한 대 한 대 정성껏 청소합니다.
           </p>
 
           <div
@@ -77,12 +78,12 @@ export function Hero() {
             className="rise mx-auto mt-9 grid w-full max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4 lg:mx-0"
             style={{ ["--rise-delay" as string]: "420ms" }}
           >
-            {CHIPS.map(({ icon: Icon, label }) => (
+            {CHIPS.map((label) => (
               <li
                 key={label}
-                className="flex items-center justify-center gap-2 rounded-xl border border-border bg-card/60 px-3 py-3 text-sm font-semibold text-ink shadow-sm backdrop-blur-sm"
+                className="flex items-center justify-center gap-2 rounded-xl border border-border bg-card px-3 py-3 text-sm font-semibold text-ink shadow-sm"
               >
-                <Icon className="h-[1.15rem] w-[1.15rem] shrink-0 text-accent" strokeWidth={2.2} />
+                <Check className="h-[1.15rem] w-[1.15rem] shrink-0 text-accent-ink" strokeWidth={2.6} />
                 {label}
               </li>
             ))}

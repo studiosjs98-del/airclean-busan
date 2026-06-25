@@ -66,7 +66,7 @@ export function Owner() {
           <ul className="mt-8 space-y-5">
             {VALUES.map(({ icon: Icon, title, desc }) => (
               <li key={title} className="flex gap-4">
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/10 text-accent ring-1 ring-accent/20">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/10 text-accent-ink ring-1 ring-accent/20">
                   <Icon className="h-5 w-5" strokeWidth={2.1} />
                 </span>
                 <div>
@@ -80,8 +80,8 @@ export function Owner() {
           <div className="mt-9 flex items-center gap-3">
             <PhoneButton size="lg" />
             <span className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground">
-              <ShieldCheck className="h-4 w-4 text-accent" strokeWidth={2.2} />
-              부산·경남 어디든 출장
+              <ShieldCheck className="h-4 w-4 text-accent-ink" strokeWidth={2.2} />
+              전북 어디든 출장
             </span>
           </div>
         </Reveal>

@@ -83,39 +83,40 @@
 :root {
   --radius: 0.85rem;
 
-  /* Dark theme — graphite/near-black base with turquoise accent.
-     All text pairs verified ≥4.5:1 (AA) on dark; most ≥8:1. */
-  --background: #0a1417; /* near-black teal-graphite */
-  --foreground: #e8eff0; /* off-white (16:1) */
-  --card: #11242a; /* elevated dark surface */
-  --card-foreground: #e8eff0;
-  --popover: #11242a;
-  --popover-foreground: #e8eff0;
-  --muted: #18313a;
-  --muted-foreground: #9db2b8; /* 8.4:1 on bg */
+  /* Light theme — warm off-white base, bright mint accent, ONE dark anchor.
+     Text pairs verified ≥4.5:1 (AA); mint fills use dark text. */
+  --background: #f6fbfa; /* warm off-white */
+  --foreground: #0f1b1e; /* deep slate (16.8:1) */
+  --card: #ffffff;
+  --card-foreground: #0f1b1e;
+  --popover: #ffffff;
+  --popover-foreground: #0f1b1e;
+  --muted: #eaf4f1;
+  --muted-foreground: #51646a; /* 5.9:1 on bg */
 
-  --primary: #102a33; /* steel band / neutral dark fill (white text 15:1) */
+  --primary: #0a1417; /* DARK ANCHOR — CTA band + footer keep this (white 18.7:1) */
   --primary-foreground: #ffffff;
-  --primary-600: #163a45;
-  --primary-700: #0c2027;
-  --ink: #e8eff0; /* headings — now off-white */
+  --primary-600: #14242a;
+  --primary-700: #060e11;
+  --ink: #0f1b1e; /* headings — deep slate */
 
-  --secondary: #122a31; /* alt dark section surface */
-  --secondary-foreground: #cfe2e5;
+  --secondary: #e6f7f1; /* soft mint surface (cards / alt sections) */
+  --secondary-foreground: #0f3d32;
 
-  --accent: #2dd4bf; /* TURQUOISE — accent, CTA, glow (10:1 on bg) */
-  --accent-foreground: #04201c; /* dark text on turquoise buttons (9.2:1) */
-  --accent-2: #14b8a6; /* deeper teal — gradients/graphical */
-  --accent-ink: #2dd4bf; /* turquoise is already bright on dark */
+  --accent: #00d6a0; /* BRIGHT MINT — CTA fill, focus ring, on-dark accent */
+  --accent-foreground: #04231c; /* dark text on mint CTAs (8.8:1) */
+  --accent-2: #0aa17c; /* mid mint — gradients / graphical / large text */
+  --accent-ink: #047857; /* AA mint for small text + icons on light (5.25:1) */
+  --accent-hover: #00bd8c; /* mint hover */
 
   --kakao: #fee500;
   --kakao-foreground: #1a1a00;
 
-  --destructive: #f87171; /* lighter red for dark (5.8:1 on card) */
-  --destructive-foreground: #2a0a0a;
-  --border: #25434c; /* visible hairline on dark */
-  --input: #25434c;
-  --ring: #2dd4bf;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #d6e7e1; /* light hairline */
+  --input: #d6e7e1;
+  --ring: #00d6a0;
 }
 
 @layer base {
@@ -206,12 +207,12 @@
     font-feature-settings: "tnum";
   }
 
-  /* Clean-air glow wash — turquoise on dark */
+  /* Clean-air glow wash — soft mint on light */
   .clean-air {
     background:
-      radial-gradient(60% 55% at 18% 12%, rgba(45, 212, 191, 0.16), transparent 60%),
-      radial-gradient(55% 50% at 85% 6%, rgba(20, 184, 166, 0.13), transparent 55%),
-      radial-gradient(90% 80% at 50% 118%, rgba(45, 212, 191, 0.06), transparent 60%);
+      radial-gradient(60% 55% at 16% 10%, rgba(0, 214, 160, 0.14), transparent 60%),
+      radial-gradient(55% 50% at 88% 4%, rgba(0, 189, 140, 0.12), transparent 55%),
+      radial-gradient(90% 80% at 50% 120%, rgba(0, 214, 160, 0.07), transparent 60%);
   }
 
   .clean-air-drift {
