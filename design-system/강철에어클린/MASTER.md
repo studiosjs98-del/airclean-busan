@@ -16,31 +16,32 @@
 
 ### Color Palette
 
-> **APPROVED DIRECTION (overrides the generator's default navy+gold):**
-> Brand = 강철 (steel). Deep steel/graphite primary + ONE clean-air cyan/teal accent.
-> Approved by client 2026-06-23. Tokens defined once in `client/src/index.css` —
-> never hardcode raw hex in components.
+> **APPROVED DIRECTION — DARK theme (updated 2026-06-25):**
+> Brand = 강철 (steel). Dark graphite/near-black base + a turquoise accent.
+> (Superseded the earlier light steel+cyan direction at client's request:
+> "darker vibe with the turquoise.") Tokens defined once in
+> `client/src/index.css` — never hardcode raw hex in components.
 
 | Role | Hex | CSS Variable | Use |
 |------|-----|--------------|-----|
-| Foreground (ink) | `#0B1620` | `--foreground` / `--ink` | Body + heading text (17:1) |
-| Primary (steel) | `#14293A` | `--primary` | Primary CTA, dark bands (14.9:1 w/ white) |
-| Primary-600 | `#1D3A4F` | `--primary-600` | Hovers, gradients |
-| Primary-700 | `#0F1E2B` | `--primary-700` | CTA hover |
-| Accent (cyan) | `#06B6D4` | `--accent` | Highlights, slider handle, focus ring — NOT a text button (2.4:1) |
-| Accent-2 (teal) | `#0D9488` | `--accent-2` | Icons / gradients / borders only (graphical, 3:1) |
-| Accent-ink (teal) | `#0A7268` | `--accent-ink` | AA-safe teal for **small text** on light (5.5:1) |
+| Background | `#0A1417` | `--background` | Near-black teal-graphite base |
+| Foreground (ink) | `#E8EFF0` | `--foreground` / `--ink` | Body + heading text (16:1 on bg) |
+| Surface (card) | `#11242A` | `--card` | Elevated dark surfaces |
+| Secondary | `#122A31` | `--secondary` | Alt dark section surface |
+| Primary (steel) | `#102A33` | `--primary` | Dark bands/sections, neutral fills (white text 15:1) |
+| Accent (turquoise) | `#2DD4BF` | `--accent` | CTA fill, glow, highlights, eyebrow text (10:1 on bg) |
+| Accent-fg | `#04201C` | `--accent-foreground` | Dark text on turquoise CTAs (9.2:1) |
+| Accent-2 (teal) | `#14B8A6` | `--accent-2` | Gradients / graphical |
+| Accent-ink | `#2DD4BF` | `--accent-ink` | Small turquoise text (already bright on dark) |
 | Kakao | `#FEE500` | `--kakao` | 카카오톡 button ONLY (brand-correct, `#1A1A00` text) |
-| Background | `#F6F9FB` | `--background` | Cool off-white |
-| Surface | `#FFFFFF` | `--card` | Cards |
-| Secondary | `#EAF1F6` | `--secondary` | Light steel tint sections |
-| Muted text | `#566472` | `--muted-foreground` | Sub copy (5.7:1 on bg) |
-| Border | `#DCE5EC` | `--border` | Hairlines |
-| Destructive | `#DC2626` | `--destructive` | Form errors |
-| Ring | `#06B6D4` | `--ring` | Focus outline |
+| Muted text | `#9DB2B8` | `--muted-foreground` | Sub copy (8.4:1 on bg) |
+| Border | `#25434C` | `--border` | Hairlines (visible on dark) |
+| Destructive | `#F87171` | `--destructive` | Form errors (5.8:1 on card) |
+| Ring | `#2DD4BF` | `--ring` | Focus outline |
 
-**Color Notes:** Steel (trust/authority) + clean-air cyan (energy). Cyan stays a
-highlight; the primary action stays steel for contrast + confidence. All
+**Color Notes:** Dark steel base + turquoise energy. Turquoise is bright enough
+on dark to be both the CTA fill AND small text (10:1), so it carries the accent
+everywhere; steel stays the neutral section/band color. All
 foreground/background text pairs verified ≥4.5:1 (AA); graphical accents ≥3:1.
 
 ### Typography
