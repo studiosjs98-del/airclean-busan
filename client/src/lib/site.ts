@@ -15,8 +15,10 @@ export const site = {
   businessNumber: "000-00-00000", // 사업자등록번호 교체
   serviceAreaLabel: "전주·익산·군산 등 전북 전 지역",
   // 구글맵 임베드 URL(서비스 지역). .env 의 VITE_MAPS_EMBED_URL 로 덮어쓸 수 있음.
+  // 키 없이 동작하는 클래식 임베드(maps.google.com). 공식 Embed API URL이 있으면
+  // VITE_MAPS_EMBED_URL 로 주입하세요.
   mapsEmbedFallback:
-    "https://www.google.com/maps?q=%EC%A0%84%EB%9D%BC%EB%B6%81%EB%8F%84%20%EC%A0%84%EC%A3%BC%EC%8B%9C&z=10&output=embed",
+    "https://maps.google.com/maps?q=%EC%A0%84%EC%A3%BC%EC%8B%9C&hl=ko&z=11&output=embed",
 } as const;
 
 export type Stat = {
