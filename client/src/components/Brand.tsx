@@ -1,29 +1,65 @@
 import { cn } from "@/lib/utils";
 import { site } from "@/lib/site";
-import { Phone, Wind } from "lucide-react";
+import { Phone } from "lucide-react";
 
-/** Wordmark + steel/cyan air mark. SVG only, no raster/emoji. */
+/**
+ * 강철에어클린 logo mark — a self-contained gradient "squircle" with a clean
+ * airflow glyph + sparkle (clean/cool air). SVG only, scales crisply, used for
+ * the header/footer lockup and the favicon.
+ */
+export function LogoMark({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 40 40" className={className} role="img" aria-label={`${site.name} 로고`}>
+      <defs>
+        <linearGradient id="kac-mark" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#00E5AC" />
+          <stop offset="1" stopColor="#00B589" />
+        </linearGradient>
+      </defs>
+      <rect width="40" height="40" rx="11" fill="url(#kac-mark)" />
+      <g
+        fill="none"
+        stroke="#04231C"
+        strokeWidth="2.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        {/* circulating fresh-air lines */}
+        <path d="M10 15.5h12.5a3.6 3.6 0 1 0-3.6-3.6" />
+        <path d="M10 20h8.5" />
+        <path d="M10 24.5h14a3.6 3.6 0 1 1-3.6 3.6" />
+      </g>
+      {/* sparkle — "clean / fresh" */}
+      <path
+        d="M30.2 7c.45 2.3 1 2.85 3.3 3.3-2.3.45-2.85 1-3.3 3.3-.45-2.3-1-2.85-3.3-3.3 2.3-.45 2.85-1 3.3-3.3Z"
+        fill="#04231C"
+      />
+    </svg>
+  );
+}
+
+/** Full logo lockup — mark + stacked wordmark. */
 export function Logo({ className, onDark = false }: { className?: string; onDark?: boolean }) {
   return (
-    <span className={cn("inline-flex items-center gap-2", className)}>
-      <span
-        className={cn(
-          "grid h-9 w-9 place-items-center rounded-lg",
-          onDark
-            ? "bg-white/10 text-accent"
-            : "bg-accent text-accent-foreground shadow-[0_0_18px_-4px_rgba(45,212,191,0.6)]",
-        )}
-        aria-hidden="true"
-      >
-        <Wind className="h-5 w-5" strokeWidth={2.2} />
-      </span>
-      <span
-        className={cn(
-          "text-[1.0625rem] font-extrabold tracking-tight",
-          onDark ? "text-white" : "text-ink",
-        )}
-      >
-        {site.name}
+    <span className={cn("inline-flex items-center gap-2.5", className)}>
+      <LogoMark className="h-9 w-9 shrink-0 drop-shadow-[0_2px_10px_rgba(0,214,160,0.35)]" />
+      <span className="flex flex-col leading-none">
+        <span
+          className={cn(
+            "text-[1.0625rem] font-extrabold tracking-tight",
+            onDark ? "text-white" : "text-ink",
+          )}
+        >
+          {site.name}
+        </span>
+        <span
+          className={cn(
+            "mt-1 text-[0.5625rem] font-semibold uppercase tracking-[0.22em]",
+            onDark ? "text-accent" : "text-accent-ink",
+          )}
+        >
+          Aircon Cleaning
+        </span>
       </span>
     </span>
   );

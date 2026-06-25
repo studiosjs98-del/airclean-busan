@@ -2,12 +2,6 @@ import { useCallback, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/Reveal";
 import { MoveHorizontal } from "lucide-react";
-import {
-  useScroll,
-  useTransform,
-  useMotionValueEvent,
-  useReducedMotion,
-} from "framer-motion";
 
 /**
  * Drag-to-compare before/after slider — the highest-converting element for a
@@ -71,28 +65,9 @@ interface BeforeAfterProps {
 }
 
 export function BeforeAfter({ beforeSrc, afterSrc }: BeforeAfterProps) {
-  const reduce = useReducedMotion();
-  // 0..100 = width of the "before" (dirty) reveal. Start mostly-dirty; the
-  // scroll-scrub sweeps it to clean. Reduced-motion shows the clean state.
-  const [pos, setPos] = useState(reduce ? 12 : 85);
+  const [pos, setPos] = useState(50); // 0..100 = width of the "before" (dirty) reveal
   const frameRef = useRef<HTMLDivElement | null>(null);
-  const sectionRef = useRef<HTMLElement | null>(null);
   const dragging = useRef(false);
-  // Once the user drags/keys, scroll stops driving the divider.
-  const userControlled = useRef(false);
-
-  // Scroll-scrub: as the section travels through the viewport, sweep the
-  // divider from dirty (88) to clean (12). Smooth + reversible on scroll-up.
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-  const scrubbed = useTransform(scrollYProgress, [0.18, 0.62], [88, 12], {
-    clamp: true,
-  });
-  useMotionValueEvent(scrubbed, "change", (v) => {
-    if (!reduce && !userControlled.current) setPos(v);
-  });
 
   const setFromClientX = useCallback((clientX: number) => {
     const el = frameRef.current;
@@ -104,7 +79,6 @@ export function BeforeAfter({ beforeSrc, afterSrc }: BeforeAfterProps) {
 
   const onPointerDown = (e: React.PointerEvent) => {
     dragging.current = true;
-    userControlled.current = true;
     (e.target as Element).setPointerCapture?.(e.pointerId);
     setFromClientX(e.clientX);
   };
@@ -117,7 +91,6 @@ export function BeforeAfter({ beforeSrc, afterSrc }: BeforeAfterProps) {
   };
 
   const onKeyDown = (e: React.KeyboardEvent) => {
-    userControlled.current = true;
     if (e.key === "ArrowLeft") {
       setPos((p) => Math.max(0, p - 4));
       e.preventDefault();
@@ -132,7 +105,7 @@ export function BeforeAfter({ beforeSrc, afterSrc }: BeforeAfterProps) {
   };
 
   return (
-    <section ref={sectionRef} id="proof" className="bg-background py-20 sm:py-24">
+    <section id="proof" className="bg-background py-20 sm:py-24">
       <div className="container">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow justify-center">청소 전·후 비교</p>
@@ -140,8 +113,7 @@ export function BeforeAfter({ beforeSrc, afterSrc }: BeforeAfterProps) {
             눈으로 보는 확실한 차이
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            스크롤만 해도 청소 전·후가 한눈에. 손잡이를 직접 움직여 더 자세히
-            확인하실 수도 있습니다.
+            손잡이를 좌우로 움직여, 완전분해 청소가 만든 차이를 직접 확인해 보세요.
           </p>
         </Reveal>
 

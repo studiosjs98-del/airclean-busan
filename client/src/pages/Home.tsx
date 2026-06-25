@@ -27,6 +27,7 @@ export default function Home() {
 
       <main>
         <Hero />
+        <Location />
         <BeforeAfter />
         <TrustBand />
         <Owner />
@@ -36,7 +37,6 @@ export default function Home() {
         <ReviewsMarquee />
         <Estimate />
         <Faq />
-        <Location />
       </main>
 
       <SiteFooter />
