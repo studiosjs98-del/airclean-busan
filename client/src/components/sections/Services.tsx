@@ -4,10 +4,16 @@ import { PhoneButton } from "@/components/Brand";
 import { AirVent, Wind, Building2, Sparkles, Check } from "lucide-react";
 
 const ICONS = [Wind, AirVent, Building2, Sparkles];
+const HUES = [
+  { chip: "bg-azure-soft", ink: "text-azure-ink", border: "hover:border-azure/50" },
+  { chip: "bg-aqua-soft", ink: "text-aqua-ink", border: "hover:border-aqua/50" },
+  { chip: "bg-iris-soft", ink: "text-iris-ink", border: "hover:border-iris/50" },
+  { chip: "bg-coral-soft", ink: "text-coral-ink", border: "hover:border-coral/50" },
+];
 
 export function Services() {
   return (
-    <section id="services" className="bg-background py-20 sm:py-24">
+    <section id="services" className="bg-aqua-soft/40 py-20 sm:py-24">
       <div className="container">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow justify-center">서비스 안내</p>
@@ -23,10 +29,13 @@ export function Services() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((svc, i) => {
             const Icon = ICONS[i];
+            const hue = HUES[i % HUES.length];
             return (
               <Reveal as="article" key={svc.title} delay={i * 90}>
-                <div className="group flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg">
-                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-accent-ink transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
+                <div
+                  className={`group flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg ${hue.border}`}
+                >
+                  <div className={`grid h-12 w-12 place-items-center rounded-xl ${hue.chip} ${hue.ink}`}>
                     <Icon className="h-6 w-6" strokeWidth={2.1} />
                   </div>
                   <h3 className="mt-4 text-lg font-bold text-ink">{svc.title}</h3>

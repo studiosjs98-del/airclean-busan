@@ -49,6 +49,26 @@
      only for icons/gradients/borders (graphical, 3:1). */
   --color-accent-ink: var(--accent-ink);
 
+  /* Multi-hue brand spectrum (derived from the cobalt logo). Each hue has a
+     full tone, a soft surface (-soft), and an AA text/icon tone (-ink). */
+  --color-cobalt: var(--cobalt);
+  --color-azure: var(--azure);
+  --color-azure-soft: var(--azure-soft);
+  --color-azure-ink: var(--azure-ink);
+  --color-aqua: var(--aqua);
+  --color-aqua-soft: var(--aqua-soft);
+  --color-aqua-ink: var(--aqua-ink);
+  --color-mint: var(--mint);
+  --color-mint-soft: var(--mint-soft);
+  --color-mint-ink: var(--mint-ink);
+  --color-iris: var(--iris);
+  --color-iris-soft: var(--iris-soft);
+  --color-iris-ink: var(--iris-ink);
+  --color-coral: var(--coral);
+  --color-coral-soft: var(--coral-soft);
+  --color-coral-ink: var(--coral-ink);
+  --color-anchor: var(--anchor);
+
   /* Brand-correct partner color */
   --color-kakao: var(--kakao);
   --color-kakao-foreground: var(--kakao-foreground);
@@ -83,40 +103,58 @@
 :root {
   --radius: 0.85rem;
 
-  /* Light theme — warm off-white base, bright mint accent, ONE dark anchor.
-     Text pairs verified ≥4.5:1 (AA); mint fills use dark text. */
-  --background: #f6fbfa; /* warm off-white */
-  --foreground: #0f1b1e; /* deep slate (16.8:1) */
+  /* Multi-hue theme, anchored on the cobalt logo. Cool off-white base, dark
+     blue-slate text, a spectrum of blues + a coral pop. All AA-verified. */
+  --background: #f4f7fe; /* cool off-white */
+  --foreground: #14223b; /* blue-slate (14.8:1) */
   --card: #ffffff;
-  --card-foreground: #0f1b1e;
+  --card-foreground: #14223b;
   --popover: #ffffff;
-  --popover-foreground: #0f1b1e;
-  --muted: #eaf4f1;
-  --muted-foreground: #51646a; /* 5.9:1 on bg */
+  --popover-foreground: #14223b;
+  --muted: #e9eefb;
+  --muted-foreground: #51607a; /* 5.9:1 on bg */
 
-  --primary: #0a1417; /* DARK ANCHOR — CTA band + footer keep this (white 18.7:1) */
+  --primary: #1e45ab; /* COBALT (logo) — CTAs, white text (8.4:1) */
   --primary-foreground: #ffffff;
-  --primary-600: #14242a;
-  --primary-700: #060e11;
-  --ink: #0f1b1e; /* headings — deep slate */
+  --primary-600: #18398f;
+  --primary-700: #112a6e;
+  --ink: #14223b;
 
-  --secondary: #e6f7f1; /* soft mint surface (cards / alt sections) */
-  --secondary-foreground: #0f3d32;
+  --secondary: #eef3fe; /* soft blue surface */
+  --secondary-foreground: #1e3a8a;
 
-  --accent: #00d6a0; /* BRIGHT MINT — CTA fill, focus ring, on-dark accent */
-  --accent-foreground: #04231c; /* dark text on mint CTAs (8.8:1) */
-  --accent-2: #0aa17c; /* mid mint — gradients / graphical / large text */
-  --accent-ink: #047857; /* AA mint for small text + icons on light (5.25:1) */
-  --accent-hover: #00bd8c; /* mint hover */
+  --accent: #14b6d6; /* aqua — highlights, focus ring */
+  --accent-foreground: #04222a;
+  --accent-2: #2e8be6; /* azure — gradients */
+  --accent-ink: #0e7d92; /* aqua-ink — AA small text on light */
 
   --kakao: #fee500;
   --kakao-foreground: #1a1a00;
 
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  --border: #d6e7e1; /* light hairline */
-  --input: #d6e7e1;
-  --ring: #00d6a0;
+  --border: #dbe4f3;
+  --input: #dbe4f3;
+  --ring: #2e8be6;
+
+  /* hue spectrum */
+  --cobalt: #1e45ab;
+  --azure: #2e8be6;
+  --azure-soft: #e7f1fd;
+  --azure-ink: #1763b0;
+  --aqua: #14b6d6;
+  --aqua-soft: #e4f6fb;
+  --aqua-ink: #0e7d92;
+  --mint: #13b39a;
+  --mint-soft: #e3f6f1;
+  --mint-ink: #0f7a68;
+  --iris: #5b4bd6;
+  --iris-soft: #ecebfd;
+  --iris-ink: #4736bf;
+  --coral: #ff6e61;
+  --coral-soft: #fff0ee;
+  --coral-ink: #cc4636;
+  --anchor: #0b1c4a; /* deep navy footer */
 }
 
 @layer base {
@@ -198,7 +236,7 @@
     font-size: 0.8125rem;
     font-weight: 600;
     letter-spacing: 0.08em;
-    color: var(--accent-ink);
+    color: var(--cobalt);
   }
 
   /* Tabular figures for stats / prices */
@@ -207,12 +245,13 @@
     font-feature-settings: "tnum";
   }
 
-  /* Clean-air glow wash — soft mint on light */
+  /* Multi-hue brand glow wash (cobalt → aqua → iris → coral) */
   .clean-air {
     background:
-      radial-gradient(60% 55% at 16% 10%, rgba(0, 214, 160, 0.14), transparent 60%),
-      radial-gradient(55% 50% at 88% 4%, rgba(0, 189, 140, 0.12), transparent 55%),
-      radial-gradient(90% 80% at 50% 120%, rgba(0, 214, 160, 0.07), transparent 60%);
+      radial-gradient(50% 50% at 12% 8%, rgba(46, 139, 230, 0.20), transparent 62%),
+      radial-gradient(48% 48% at 88% 4%, rgba(20, 182, 214, 0.18), transparent 60%),
+      radial-gradient(55% 55% at 78% 92%, rgba(91, 75, 214, 0.16), transparent 62%),
+      radial-gradient(45% 45% at 22% 100%, rgba(255, 110, 97, 0.12), transparent 60%);
   }
 
   .clean-air-drift {

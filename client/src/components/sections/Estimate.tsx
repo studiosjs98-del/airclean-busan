@@ -66,7 +66,7 @@ export function Estimate() {
 
             <dl className="mt-8 space-y-4">
               <div className="flex items-start gap-3">
-                <span className="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-secondary text-accent-2">
+                <span className="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-azure-soft text-azure-ink">
                   <MapPin className="h-5 w-5" strokeWidth={2.1} />
                 </span>
                 <div>
@@ -77,7 +77,7 @@ export function Estimate() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <span className="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-secondary text-accent-2">
+                <span className="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-mint-soft text-mint-ink">
                   <Phone className="h-5 w-5" strokeWidth={2.1} />
                 </span>
                 <div>
@@ -93,7 +93,7 @@ export function Estimate() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <span className="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-secondary text-accent-2">
+                <span className="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-iris-soft text-iris-ink">
                   <Clock className="h-5 w-5" strokeWidth={2.1} />
                 </span>
                 <div>
@@ -113,7 +113,7 @@ export function Estimate() {
                   role="status"
                   aria-live="polite"
                 >
-                  <span className="grid h-16 w-16 place-items-center rounded-full bg-accent-2/15 text-accent-2">
+                  <span className="grid h-16 w-16 place-items-center rounded-full bg-mint-soft text-mint-ink">
                     <CheckCircle2 className="h-9 w-9" strokeWidth={2.2} />
                   </span>
                   <h3 className="mt-5 text-xl font-bold text-ink">견적 신청이 접수되었습니다</h3>

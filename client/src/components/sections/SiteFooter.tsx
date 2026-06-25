@@ -3,9 +3,20 @@ import { Logo, PhoneButton, KakaoButton } from "@/components/Brand";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-primary text-white">
+    <footer className="relative overflow-hidden bg-anchor text-white">
+      {/* multi-hue glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-64"
+        style={{
+          background:
+            "radial-gradient(40% 80% at 12% 0%, rgba(46,139,230,0.28), transparent 70%)," +
+            "radial-gradient(40% 80% at 55% 0%, rgba(20,182,214,0.20), transparent 70%)," +
+            "radial-gradient(40% 80% at 90% 0%, rgba(91,75,214,0.26), transparent 70%)",
+        }}
+      />
       {/* Final CTA band */}
-      <div className="border-b border-white/10">
+      <div className="relative border-b border-white/10">
         <div className="container flex flex-col items-center gap-6 py-14 text-center md:flex-row md:justify-between md:text-left">
           <div>
             <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">

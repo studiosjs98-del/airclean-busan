@@ -25,9 +25,16 @@ const SHOTS: Shot[] = [
   },
 ];
 
+const TAG_HUES = [
+  "bg-aqua/15 text-aqua ring-aqua/30",
+  "bg-mint/15 text-mint ring-mint/30",
+  "bg-azure/15 text-azure ring-azure/30",
+  "bg-coral/15 text-coral ring-coral/30",
+];
+
 export function Gallery() {
   return (
-    <section id="gallery" className="bg-secondary py-20 sm:py-24">
+    <section id="gallery" className="bg-iris-soft/50 py-20 sm:py-24">
       <div className="container">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow justify-center">시공 갤러리</p>
@@ -56,7 +63,9 @@ export function Gallery() {
                   className="absolute inset-0 bg-gradient-to-t from-[#06141a]/85 via-transparent to-transparent"
                 />
                 <figcaption className="absolute inset-x-0 bottom-0 p-3 sm:p-4">
-                  <span className="inline-flex rounded-full bg-accent/15 px-2.5 py-1 text-xs font-semibold text-accent ring-1 ring-accent/25 backdrop-blur">
+                  <span
+                    className={`inline-flex rounded-full px-2.5 py-1 text-xs font-semibold ring-1 backdrop-blur ${TAG_HUES[i % TAG_HUES.length]}`}
+                  >
                     {shot.tag}
                   </span>
                 </figcaption>

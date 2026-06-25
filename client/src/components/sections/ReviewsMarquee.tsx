@@ -17,7 +17,7 @@ function ReviewCard({ r }: { r: Review }) {
   return (
     <figure className="relative mx-3 flex w-[300px] shrink-0 flex-col rounded-2xl border border-border bg-card p-6 shadow-sm sm:w-[360px]">
       <Quote
-        className="absolute right-5 top-5 h-7 w-7 text-accent/15"
+        className="absolute right-5 top-5 h-7 w-7 text-iris/20"
         strokeWidth={2.4}
         aria-hidden="true"
       />
@@ -49,7 +49,7 @@ export function ReviewsMarquee() {
   const rowB = reviews.slice(half);
 
   return (
-    <section id="reviews" className="overflow-hidden bg-secondary py-20 sm:py-24">
+    <section id="reviews" className="overflow-hidden bg-mint-soft/50 py-20 sm:py-24">
       <div className="container">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow justify-center">고객 후기</p>
@@ -88,8 +88,8 @@ export function ReviewsMarquee() {
         </Marquee>
 
         {/* edge fades */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-secondary to-transparent sm:w-32" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-secondary to-transparent sm:w-32" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-mint-soft to-transparent sm:w-32" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-mint-soft to-transparent sm:w-32" />
       </div>
     </section>
   );

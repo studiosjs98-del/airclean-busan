@@ -46,7 +46,7 @@ export function Hero() {
           >
             곰팡이 냄새 없는
             <br />
-            <span className="bg-gradient-to-r from-accent-ink to-accent-2 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cobalt via-iris to-azure-ink bg-clip-text text-transparent">
               깨끗하고 건강한 공기.
             </span>
           </h1>
@@ -83,7 +83,7 @@ export function Hero() {
                 key={label}
                 className="flex items-center justify-center gap-2 rounded-xl border border-border bg-card px-3 py-3 text-sm font-semibold text-ink shadow-sm"
               >
-                <Check className="h-[1.15rem] w-[1.15rem] shrink-0 text-accent-ink" strokeWidth={2.6} />
+                <Check className="h-[1.15rem] w-[1.15rem] shrink-0 text-primary" strokeWidth={2.6} />
                 {label}
               </li>
             ))}
@@ -98,13 +98,14 @@ export function Hero() {
           {/* turquoise glow */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -inset-6 -z-10 rounded-[2rem] opacity-70"
+            className="pointer-events-none absolute -inset-6 -z-10 rounded-[2rem] opacity-80"
             style={{
               background:
-                "radial-gradient(60% 60% at 70% 30%, rgba(45,212,191,0.35), transparent 70%)",
+                "radial-gradient(55% 55% at 75% 25%, rgba(46,139,230,0.40), transparent 70%)," +
+                "radial-gradient(55% 55% at 25% 80%, rgba(91,75,214,0.32), transparent 70%)",
             }}
           />
-          <figure className="relative overflow-hidden rounded-3xl border border-accent/25 bg-card shadow-2xl">
+          <figure className="relative overflow-hidden rounded-3xl border border-azure/30 bg-card shadow-2xl">
             <img
               src="/images/owner.jpg"
               alt="강철에어클린 대표 기사 — 에어컨 완전분해 청소 전문가"

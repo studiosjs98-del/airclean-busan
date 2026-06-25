@@ -1,6 +1,5 @@
 import { SiteHeader } from "@/components/sections/SiteHeader";
 import { Hero } from "@/components/sections/Hero";
-import { BeforeAfter } from "@/components/sections/BeforeAfter";
 import { TrustBand } from "@/components/sections/TrustBand";
 import { Owner } from "@/components/sections/Owner";
 import { Process } from "@/components/sections/Process";
@@ -28,7 +27,6 @@ export default function Home() {
       <main>
         <Hero />
         <Location />
-        <BeforeAfter />
         <TrustBand />
         <Owner />
         <Process />

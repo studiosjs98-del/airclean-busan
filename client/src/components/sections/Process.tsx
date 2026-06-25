@@ -3,10 +3,17 @@ import { Reveal } from "@/components/Reveal";
 import { Wrench, Droplets, ShieldCheck, ClipboardCheck } from "lucide-react";
 
 const ICONS = [Wrench, Droplets, ShieldCheck, ClipboardCheck];
+// One brand hue per step.
+const HUES = [
+  { chip: "bg-azure-soft", ink: "text-azure-ink", ring: "ring-azure/15" },
+  { chip: "bg-aqua-soft", ink: "text-aqua-ink", ring: "ring-aqua/15" },
+  { chip: "bg-mint-soft", ink: "text-mint-ink", ring: "ring-mint/15" },
+  { chip: "bg-iris-soft", ink: "text-iris-ink", ring: "ring-iris/15" },
+];
 
 export function Process() {
   return (
-    <section id="process" className="bg-secondary/60 py-20 sm:py-24">
+    <section id="process" className="bg-background py-20 sm:py-24">
       <div className="container">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="eyebrow justify-center">완전분해 청소 과정</p>
@@ -23,18 +30,21 @@ export function Process() {
           {/* connecting line (desktop) */}
           <div
             aria-hidden="true"
-            className="absolute left-0 right-0 top-7 hidden h-0.5 bg-gradient-to-r from-accent-2/30 via-accent/40 to-accent-2/30 md:block"
+            className="absolute left-0 right-0 top-7 hidden h-0.5 bg-gradient-to-r from-azure via-aqua to-iris md:block"
           />
           {steps.map((step, i) => {
             const Icon = ICONS[i];
+            const hue = HUES[i % HUES.length];
             return (
               <Reveal as="li" key={step.no} delay={i * 110} className="relative">
                 <div className="flex flex-col items-center text-center md:items-start md:text-left">
-                  <div className="relative z-10 grid h-14 w-14 place-items-center rounded-2xl bg-primary text-white shadow-md ring-4 ring-secondary/60">
+                  <div
+                    className={`relative z-10 grid h-14 w-14 place-items-center rounded-2xl ${hue.chip} ${hue.ink} shadow-sm ring-4 ring-background`}
+                  >
                     <Icon className="h-6 w-6" strokeWidth={2.1} />
                   </div>
                   <div className="mt-4 flex items-baseline gap-2">
-                    <span className="tnum text-sm font-bold text-accent-ink">{step.no}</span>
+                    <span className={`tnum text-sm font-bold ${hue.ink}`}>{step.no}</span>
                     <h3 className="text-lg font-bold text-ink">{step.title}</h3>
                   </div>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">

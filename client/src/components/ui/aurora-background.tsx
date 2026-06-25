@@ -19,11 +19,11 @@ interface AuroraBackgroundProps extends React.HTMLProps<HTMLDivElement> {
 const auroraVars = {
   "--white": "#ffffff",
   "--transparent": "transparent",
-  "--blue-500": "#00d6a0", // mint
-  "--indigo-300": "#34e0b8",
-  "--blue-300": "#6ceccd", // light mint
-  "--violet-200": "#a7f3e0", // pale mint
-  "--blue-400": "#1fd9a6",
+  "--blue-500": "#2e8be6", // azure
+  "--indigo-300": "#5b4bd6", // iris
+  "--blue-300": "#14b6d6", // aqua
+  "--violet-200": "#8aa2ff", // periwinkle
+  "--blue-400": "#1e45ab", // cobalt
 } as React.CSSProperties;
 
 export const AuroraBackground = ({

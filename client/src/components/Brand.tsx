@@ -45,7 +45,7 @@ export function PhoneButton({ className, size = "md", label = "전화 상담" }:
       href={site.phoneHref}
       aria-label={`${label} ${site.phoneDisplay}`}
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-xl bg-accent font-semibold text-accent-foreground shadow-[0_6px_24px_-6px_rgba(45,212,191,0.55)] transition-all duration-200 hover:brightness-110 hover:shadow-[0_8px_30px_-6px_rgba(45,212,191,0.7)] active:scale-[0.98]",
+        "inline-flex items-center justify-center gap-2 rounded-xl bg-primary font-semibold text-primary-foreground shadow-[0_6px_24px_-6px_rgba(30,69,171,0.6)] transition-all duration-200 hover:bg-primary-600 hover:shadow-[0_8px_30px_-6px_rgba(30,69,171,0.75)] active:scale-[0.98]",
         size === "lg" ? "min-h-[52px] px-7 text-base" : "min-h-[48px] px-5 text-[0.95rem]",
         className,
       )}
